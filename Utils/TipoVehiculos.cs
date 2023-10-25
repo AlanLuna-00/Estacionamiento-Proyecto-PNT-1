@@ -4,7 +4,6 @@
     {
         Auto,
         Moto,
-        Camioneta,
-        Bicicleta
+        Camioneta
     }
 }

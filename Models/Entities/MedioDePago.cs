@@ -10,6 +10,7 @@ namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
         [Required, StringLength(25)]
         public string Nombre { get; set; }
 
+        [Required]
         public double Porcentaje { get; set; }
     }
 }

@@ -3,8 +3,6 @@
     public enum Precio
     {
         HORA = 100,
-        DIA = 800,
-        SEMANA = 5000,
-        MES = 15000
+        ESTADIA = 800,
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
 {
@@ -7,12 +8,11 @@ namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
         [Key]
         public int Id { get; set; }
 
-        public int? RegistroId { get; set; }
+        [Required]
+        public int RegistroId { get; set; }
 
         [Required]
         public int Precio { get; set; }
-
-        public int? Patente { get; set; }
 
         public int MedioDePagoId { get; set; }
     }

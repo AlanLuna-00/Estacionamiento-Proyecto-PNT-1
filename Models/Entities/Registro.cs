@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
 {
@@ -9,11 +11,12 @@ namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
 
         [Required]
         public string Patente { get; set; }
-
         [Required]
         public int HoraIngreso { get; set; }
+        [AllowNull]
+        public int? HoraSalida { get; set; }
 
         [Required]
-        public int HoraEgreso { get; set; }
+        public int NumeroDeCochera { get; set; }
     }
 }

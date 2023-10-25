@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
@@ -12,8 +13,9 @@ namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
         [Required]
         public int Numero { get; set; }
         public int? Piso { get; set; }
+        [AllowNull]
         public string? Departamento { get; set; }
-
+        [AllowNull]
         public string? CodPostal { get; set; }
         [Required]
         public string Ciudad { get; set; }

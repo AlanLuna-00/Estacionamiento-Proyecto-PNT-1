@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
 {
@@ -6,16 +7,17 @@ namespace Estacionamiento_Proyecto_PNT_1.Models.Entities
     {
         [Key, StringLength(10)]
         public string Id { get; set; }
-        [StringLength(50)]
+        [StringLength(50), AllowNull]
         public string? Nombre { get; set; }
-        [StringLength(50)]
+        [StringLength(50), AllowNull]
         public string? Apellido { get; set; }
+        [AllowNull]
         public int? DomicilioId { get; set; }
-        [StringLength(50)]
+        [StringLength(50), AllowNull]
         public string? RazonSocial { get; set; }
-        [StringLength(20)]
+        [StringLength(20), AllowNull]
         public string? Telefono { get; set; }
-        [StringLength(50)]
+        [StringLength(50), AllowNull]
         public string? Email { get; set; }
     }
 }
