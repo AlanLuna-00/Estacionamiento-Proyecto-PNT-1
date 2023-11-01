@@ -1,0 +1,80 @@
+﻿@using Estacionamiento_Proyecto_PNT_1.Models.Entities
+@model List<Cliente> 
+
+<h1>
+    Lista de Clientes
+</h1>
+
+<button class="btn btn-primary">
+    <a asp-action="Agregar" class="text-white">Crear Cliente</a>
+</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre/Razon Social</th>
+            <th scope="col">DNI/CUIT</th>
+            <th scope="col">Domicilio</th>
+            <th scope="col">Vehiculo</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                
+                    @if (cliente.RazonSocial == null)
+                    {
+                    <td>
+                        @cliente.Nombre 
+                        @cliente.Apellido
+                    </td>
+                    } else
+                    {
+                        <td>
+                        @cliente.RazonSocial
+                         </td>
+                    }
+               
+                <td>@cliente.Id</td>
+                
+                    @if (cliente.Domicilio == null)
+                    {
+                        <td>
+                           No tiene domicilio
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @cliente.Domicilio.Calle , @cliente.Domicilio.Numero, @cliente.Domicilio.Ciudad
+                        </td>
+                    }
+                    
+                    @if(cliente.Vehiculo == null)
+                    {
+                        <td>
+                            No tiene vehiculo
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @cliente.Vehiculo.Patente
+                        </td>
+                    })
+
+                <td>@cliente.Telefono</td>
+                <td>@cliente.Email</td>
+                <td>
+                    <a href="#" class="btn btn-primary">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@cliente.Id" class="btn btn-danger">Eliminar</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
